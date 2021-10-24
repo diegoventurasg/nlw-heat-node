@@ -1,6 +1,6 @@
 import prismaClient from "../prisma";
 
-class GetUserMessages {
+class GetUserMessagesService {
     async execute(user_id: string) {
         const messages = await prismaClient.message.findMany({
             where: {
@@ -18,4 +18,4 @@ class GetUserMessages {
     }
 }
 
-export { GetUserMessages };
+export { GetUserMessagesService };
