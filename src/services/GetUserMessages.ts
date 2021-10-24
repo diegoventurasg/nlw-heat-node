@@ -5,6 +5,12 @@ class GetUserMessages {
         const messages = await prismaClient.message.findMany({
             where: {
                 user_id: user_id,
+            },
+            orderBy: {
+                create_at: "desc"
+            },
+            include: {
+                user: true
             }
         });
 
